@@ -34,39 +34,26 @@ public class Main {
             System.out.println("1- Depositar 2- Sacar 3- Transferir \n4- Verificar saldo 5- verificar informações da conta 6- Sair");
             String option = scanner.nextLine();
 
-            switch(option){
-                case "1":
-                    System.out.println("Quanto deseja depositar?");
-                    double depositValue = scanner.nextDouble();
-                    account1.deposit(depositValue);
-                    break;
-
-                case "2":
-                    System.out.println("Quanto deseja sacar?");
-                    double withdrawValue = scanner.nextDouble();
-                    account1.withdraw(withdrawValue);
-                    break;
-
-                case "3":
-                    System.out.println("Quanto deseja transferir?");
-                    double transferValue = scanner.nextDouble();
-
-                    account1.transfer(transferValue, account2);
-                    break;
-
-                case "4":
-                    System.out.println(account1.getBalance());
-                    break;
-
-                case "5":
-                    System.out.println(account1.toString());
-                    break;
-
-                case "6":
-                    System.exit(0);
-
-                default:
-                    System.out.println("Opção inválida");
+            switch (option) {
+                case "1" -> {
+                    System.out.println ( "Quanto deseja depositar?" );
+                    double depositValue = scanner.nextDouble ();
+                    account1.deposit ( depositValue );
+                }
+                case "2" -> {
+                    System.out.println ( "Quanto deseja sacar?" );
+                    double withdrawValue = scanner.nextDouble ();
+                    account1.withdraw ( withdrawValue );
+                }
+                case "3" -> {
+                    System.out.println ( "Quanto deseja transferir?" );
+                    double transferValue = scanner.nextDouble ();
+                    account1.transfer ( transferValue, account2 );
+                }
+                case "4" -> System.out.println ( account1.getBalance () );
+                case "5" -> System.out.println ( account1 );
+                case "6" -> System.exit ( 0 );
+                default -> System.out.println ( "Opção inválida" );
             }
         }
     }
